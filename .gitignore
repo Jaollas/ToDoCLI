@@ -1,0 +1,42 @@
+# Arquivos gerados pelo programa
+tarefas.json
+logs.json
+tarefas_abertas_*.pdf
+
+# Backups de editores
+*.bak
+*.orig
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Distribuição / empacotamento
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Caches de ferramentas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
