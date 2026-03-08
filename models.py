@@ -6,19 +6,6 @@ PRIORIDADE_ICONE = {"alta": "🔴", "media": "🟡", "baixa": "🟢"}
 CATEGORIAS_PADRÃO = ["Trabalho", "Estudo", "Pessoal", "Saúde", "Finanças", "Outro"]
 
 
-def _migrar(t: dict, fallback_id: int) -> dict:
-    return {
-        "id": t.get("id", fallback_id),
-        "titulo": t.get("titulo", ""),
-        "descricao": t.get("descricao", ""),
-        "prioridade": t.get("prioridade", "media"),
-        "categoria": t.get("categoria", "Outro"),
-        "concluida": t.get("concluida", False),
-        "data_criacao": t.get("data_criacao") or t.get("criada_em", str(date.today())),
-        "prazo": t.get("prazo", ""),
-    }
-
-
 def proximo_id(tarefas: list) -> int:
     return max((t["id"] for t in tarefas), default=0) + 1
 

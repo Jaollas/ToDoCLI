@@ -1,7 +1,6 @@
+"""Persistence layer — load and save the tasks JSON file."""
 import json
 import os
-
-from models import _migrar
 
 ARQUIVO = "tarefas.json"
 
@@ -10,8 +9,7 @@ def carregar_tarefas() -> list:
     if os.path.exists(ARQUIVO):
         try:
             with open(ARQUIVO, "r", encoding="utf-8") as f:
-                tarefas = json.load(f)
-            return [_migrar(t, i + 1) for i, t in enumerate(tarefas)]
+                return json.load(f)
         except (json.JSONDecodeError, OSError):
             return []
     return []
